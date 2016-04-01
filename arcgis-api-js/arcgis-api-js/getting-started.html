@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>Getting Started</title>
+
+    <!-- load Theme -->
+    <link href="https://js.arcgis.com/3.16/dijit/themes/claro/claro.css"
+          rel="stylesheet" />
+    <link href="https://js.arcgis.com/3.16/esri/css/esri.css"
+          rel="stylesheet" />
+
+    <!-- configure Dojo -->
+    <script>
+        var dojoConfig = {
+            parseOnLoad: true,
+            async: true
+        };
+    </script>
+
+    <!-- load Dojo -->
+    <script src="https://js.arcgis.com/3.16"></script>
+    <script>
+        require([
+            "dojo/parser",
+            "dojo/dom",
+            "dojo/dom-construct",
+            "dijit/form/Button",
+            "dojo/ready"
+        ], function (
+            parser,
+            dom,
+            domConstruct,
+            Button,
+            ready
+            ) {
+
+            ready(function () {
+                var button = new Button({
+                    label: "Click Me!"
+                });
+                button.placeAt(document.body);
+                button.startup();
+            });
+        });
+    </script>
+</head>
+<body class="claro">
+    <div data-dojo-type="dijit/form/Button"
+         data-dojo-props="label:'Click Me!'">
+    </div>
+</body>
+</html>

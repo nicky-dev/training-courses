@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>Getting Started</title>
+
+    <!-- load Theme -->
+    <link href="https://ajax.googleapis.com/ajax/libs/dojo/1.10.4/dijit/themes/claro/claro.css"
+          rel="stylesheet" />
+
+    <!-- configure Dojo -->
+    <script>
+        var dojoConfig = {
+            parseOnLoad: true,
+            async: true
+        };
+    </script>
+
+    <!-- load Dojo -->
+    <script src="https://ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojo/dojo.js"></script>
+    <script>
+        require([
+            "dojo/parser",
+            "dojo/ready",
+            "dijit/form/Button"
+        ], function (
+            parser,
+            ready,
+            Button
+            ) {
+            ready(function () {
+                var button = new Button({
+                    label: "Programmetically"
+                });
+                button.placeAt(document.body);
+                button.startup();
+            });
+        });
+    </script>
+</head>
+<body class="claro">
+    <div data-dojo-type="dijit/form/Button"
+         data-dojo-props="label:'Declarative'">
+    </div>
+</body>
+</html>

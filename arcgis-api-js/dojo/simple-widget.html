@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>A Simple Widget</title>
+    <!-- load Theme -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/dojo/1.10.4/dijit/themes/claro/claro.css" />
+
+    <!-- configure Dojo -->
+    <script>
+        // Instead of using data-dojo-config, we're creating a dojoConfig
+        // object *before* we load dojo.js; they're functionally identical,
+        // it's just easier to read this approach with a larger configuration.
+        var dojoConfig = {
+            parseOnLoad: true,
+            async: true,
+            // This code registers the correct location of the "demo"
+            // package so we can load Dojo from the CDN whilst still
+            // being able to load local modules
+            packages: [{
+                name: "widgets",
+                location: window.location.href.substring(0, window.location.href.lastIndexOf("/")) + "/widgets"
+            }]
+        };
+    </script>
+
+    <!-- load Dojo -->
+    <script src="https://ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojo/dojo.js"></script>
+    <script>
+        require(["dojo/parser", "widgets/SomeWidget"]);
+    </script>
+</head>
+<body class="claro">
+    <div data-dojo-type="widgets/SomeWidget"></div>
+</body>
+</html>
